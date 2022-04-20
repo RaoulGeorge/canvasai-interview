@@ -1,10 +1,10 @@
 # Take home assignment
 
-- [ ] Create `Project` component based on the `Project card.png` sketch.
+- [x] Create `Project` component based on the `Project card.png` sketch.
 
   Feel free to use any css styling approach for this assignment (styled-components, css modules, `className` props etc.)
 
-- [ ] Use data from `data.js` file to generate a list of `Project` components
+- [x] Use data from `data.js` file to generate a list of `Project` components
 
 - [ ] Use `Search` input component to filter projects list by name
 
