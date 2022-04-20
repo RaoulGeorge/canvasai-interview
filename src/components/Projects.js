@@ -6,14 +6,21 @@ import styled from "styled-components/macro";
 
 export default function Projects() {
   return (
-    <Wrapper $area="content">
+    <Wrapper $area="content" >
       <Title $area="title">Projects</Title>
       <Search $area="search" placeholder="Start typing to search..." />
       {/* TODO: Use ProjectsList to host Project components OR create your own container */}
       <ProjectsList $area="projects">
         {
           projects.map(project => {
-            return <Project data={project} />
+            return <Project 
+                name={project.name} 
+                template={project.template}
+                target={project.target}
+                createdByUser={project.createdByUser}
+                createdDate={project.createdDate}
+                key={project.id} // assuming project.id is unique
+              />
           })
         }
       </ProjectsList>
