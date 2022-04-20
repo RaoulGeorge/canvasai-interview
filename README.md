@@ -6,7 +6,7 @@
 
 - [x] Use data from `data.js` file to generate a list of `Project` components
 
-- [ ] Use `Search` input component to filter projects list by name
+- [x] Use `Search` input component to filter projects list by name
 
   This task requires to write a JS function to filter projects if matched with a search query, or some *Nothing found* placeholder if there’s no match
 

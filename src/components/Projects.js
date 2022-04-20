@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { projects } from "../data";
 import Project from './Project';
+import Search from './Search';
 import styled from "styled-components/macro";
 
 
 export default function Projects() {
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const onSearchTermChanged = (event) => {
+    setSearchTerm(event.target.value);
+  }
+
+  const filteredProjects = projects.filter(project => (
+    project.name.toLowerCase().includes(searchTerm.toLowerCase())
+  ));
+
   return (
     <Wrapper $area="content" >
       <Title $area="title">Projects</Title>
-      <Search $area="search" placeholder="Start typing to search..." />
-      {/* TODO: Use ProjectsList to host Project components OR create your own container */}
+      <Search onChange={onSearchTermChanged}/>
       <ProjectsList $area="projects">
         {
-          projects.map(project => {
-            return <Project 
+          filteredProjects.length > 0 ? 
+          filteredProjects.map(project => (
+             <Project 
                 name={project.name} 
                 template={project.template}
                 target={project.target}
@@ -21,7 +33,7 @@ export default function Projects() {
                 createdDate={project.createdDate}
                 key={project.id} // assuming project.id is unique
               />
-          })
+          )) : <div>No Projects found</div>
         }
       </ProjectsList>
     </Wrapper>
@@ -40,11 +52,6 @@ const Wrapper = styled.main`
 
 const Title = styled.h1`
   grid-area: ${({ $area }) => $area};
-`;
-
-const Search = styled.input`
-  grid-area: ${({ $area }) => $area};
-  margin: 0 20px;
 `;
 
 const ProjectsList = styled.div`
