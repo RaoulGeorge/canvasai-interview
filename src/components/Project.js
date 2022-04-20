@@ -6,17 +6,17 @@ export default function Project({name, template, target, createdByUser, createdD
   return (
     <Wrapper>
       <Header>
-        <h1 className="project__name">{name}</h1>
-        <h4 className="project__template">{template}</h4>
+        <ProjectName>{name}</ProjectName>
+        <ProjectTemplate>{template}</ProjectTemplate>
       </Header>
       <Main>
-        <p>Target: {target}</p>
+        <ProjectTarget>Target: {target}</ProjectTarget>
         <hr />
       </Main>
       <Footer>
-        <h4>
+        <ProjectDate>
           CREATED: {createdByUser} &middot; { getFormattedDate(createdDate)}
-        </h4>
+        </ProjectDate>
       </Footer>
     </Wrapper>
   );
@@ -30,18 +30,24 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: flex;
+  margin-bottom: 8px;
+`;
 
-  h1, h2 {
-    flex: 1;
-  }
+const ProjectName = styled.h1`
+  flex: 1;
+  text-align: left;
+`;
 
-  .project__name {
-    text-align: left;
-  }
+const ProjectTemplate = styled.h2`
+  flex: 1;
+  text-align: right;
+`;
 
-  .project__template {
-    text-align: right;
-  }
+const ProjectTarget = styled.p``;
+
+const ProjectDate = styled.h4`
+  color: grey;
+  text-align: right;
 `;
 
 const Main = styled.main`
@@ -49,10 +55,6 @@ const Main = styled.main`
 `;
 
 const Footer = styled.footer`
-  h4 {
-    color: grey;
-    text-align: right;
-  }
 `;
 
 
