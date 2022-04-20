@@ -7,15 +7,21 @@ import styled from "styled-components/macro";
 
 export default function Projects() {
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerms, setSearchTerms] = useState([]);
 
-  const onSearchTermChanged = (event) => {
-    setSearchTerm(event.target.value);
+  const onSearchTermChanged = (searchTags) => {
+    setSearchTerms(searchTags);
   }
 
-  const filteredProjects = projects.filter(project => (
-    project.name.toLowerCase().includes(searchTerm.toLowerCase())
-  ));
+  // filter projects based on the search tags
+  const filteredProjects = projects.filter(project =>(
+    searchTerms.length === 0 
+      ? true
+      : searchTerms.filter(searchTerm => 
+          project.name.toLowerCase().includes(searchTerm)
+        ).length > 0
+    )
+  );
 
   return (
     <Wrapper $area="content" >

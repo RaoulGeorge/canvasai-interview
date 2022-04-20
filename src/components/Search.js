@@ -1,11 +1,11 @@
 import React from "react";
+import InputWithTags from "./InputWithTags";
 import styled from "styled-components/macro";
 
 export default function Search({onChange}) {
   return (
-		<SearchWrapper 
-			placeholder="Start typing to search..." 
-			onChange={onChange} />
+		<InputWithTags 
+			onTagUpdated={onChange} />
   );
 }
 
