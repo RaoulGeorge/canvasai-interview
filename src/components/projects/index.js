@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { projects } from "../data";
-import Project from './Project';
-import Search from './Search';
+import { projects } from "../../data";
+import Project from '../project';
+import Search from '../search';
 import styled from "styled-components/macro";
 
 
@@ -39,7 +39,7 @@ export default function Projects() {
                 createdDate={project.createdDate}
                 key={project.id} // assuming project.id is unique
               />
-          )) : <div>No Projects found</div>
+          )) : <div role="empty">No Projects found</div>
         }
       </ProjectsList>
     </Wrapper>

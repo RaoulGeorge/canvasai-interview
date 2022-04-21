@@ -1,10 +1,10 @@
 import React from "react";
-import { getFormattedDate } from '../utils/date'
+import { getFormattedDate } from '../../utils/date'
 import styled from "styled-components/macro";
 
 export default function Project({name, template, target, createdByUser, createdDate}) {
   return (
-    <Wrapper>
+    <Wrapper role="project-card">
       <Header>
         <ProjectName>{name}</ProjectName>
         <ProjectTemplate>{template}</ProjectTemplate>
@@ -22,7 +22,7 @@ export default function Project({name, template, target, createdByUser, createdD
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   border: 1px solid black;
   margin: 12px;
   padding: 12px;
@@ -33,7 +33,7 @@ const Header = styled.header`
   margin-bottom: 8px;
 `;
 
-const ProjectName = styled.h1`
+const ProjectName = styled.h2`
   flex: 1;
   text-align: left;
 `;

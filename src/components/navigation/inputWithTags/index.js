@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 
-export default function InputWithTags({onTagUpdated}) {
+export default function InputWithTags({
+		onTagUpdated,
+		placeholder
+	}) {
 	const [tags, setTags] = useState([]);
 	
 	const onKeyUp = (e) => {
@@ -24,15 +27,15 @@ export default function InputWithTags({onTagUpdated}) {
 		
 	return (
     <Wrapper>
-			<Tags>
+			<Tags role="tags">
 				{tags.map((tag, i) => (
-					<Tag key={i} onClick={() => removeTag(tag)}>
-						<TagName>{tag}</TagName>
+					<Tag role="tag" key={i} onClick={() => removeTag(tag)}>
+						<TagName role="tagname">{tag}</TagName>
 					</Tag>
 				))}
 			</Tags>
 			<InputWrapper 
-				placeholder="Start typing to search..." 
+				placeholder={placeholder}
 				onKeyUp={onKeyUp} />
 		</Wrapper>
 	);

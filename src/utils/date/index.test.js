@@ -1,4 +1,5 @@
-import { getFormattedDate } from './index'
+import { getFormattedDate } from './index';
+
 describe('getFormattedDate', () => {
   it('returns date in MMM DD YYYY format', () => {
 		const utcDate = '2020-08-26T20:59:39.475347Z'

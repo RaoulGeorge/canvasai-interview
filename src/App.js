@@ -1,6 +1,6 @@
 import Layout from "./Layout";
 import Navbar from "./components/navigation/Navbar";
-import Projects from "./components/Projects";
+import Projects from "./components/projects";
 import Sidebar from "./components/navigation/Sidebar";
 
 import "./styles.css";
