@@ -24,6 +24,7 @@
    - I would have included proptypes or some type system.
    - More test coverage.
    - I did not put a whole lot of thought in the aethetics of the project card.
+   - Wish I had time to configure eslint to enforce some code conventions.
 
 
 ## After completion
